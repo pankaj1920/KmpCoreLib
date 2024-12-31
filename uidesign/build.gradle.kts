@@ -3,12 +3,15 @@ import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidLibrary)
+    alias(libs.plugins.composeMultiplatform)
+    alias(libs.plugins.composeCompiler)
+    alias(libs.plugins.kotlinSerialization)
 }
 
 kotlin {
     androidTarget {
         compilerOptions {
-            jvmTarget.set(JvmTarget.JVM_21)
+            jvmTarget.set(JvmTarget.fromTarget(libs.versions.javaVersion.v21.get()))
         }
         task("testClasses")
     }
@@ -26,8 +29,31 @@ kotlin {
     }
 
     sourceSets {
+        androidMain.dependencies {
+            api(compose.preview)
+            api(libs.androidx.activity.compose)
+            api(libs.koin.android)
+        }
         commonMain.dependencies {
             //put your multiplatform dependencies here
+            api(compose.components.resources)
+            api(compose.runtime)
+            api(compose.foundation)
+            api(compose.material3)
+            api(compose.ui)
+            api(compose.components.uiToolingPreview)
+            api(libs.androidx.lifecycle.viewmodel)
+            api(libs.androidx.lifecycle.runtime.compose)
+            api(libs.sdp.ssp.compose.multiplatform)
+            api(libs.koin.core)
+            api(libs.koin.compose)
+            api(libs.kotlin.serialization)
+            api(projects.resources.coreres)
+            api(projects.resources.appres)
+            api(projects.core.utils)
+//            api(projects.core.cmpcalendar)
+            implementation("com.kizitonwose.calendar:compose-multiplatform:2.6.1")
+
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
@@ -37,12 +63,12 @@ kotlin {
 
 android {
     namespace = "com.psbapp.uidesign"
-    compileSdk = 34
+    compileSdk = libs.versions.android.compileSdk.get().toInt()
     defaultConfig {
-        minSdk = 24
+        minSdk = libs.versions.android.minSdk.get().toInt()
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_21
-        targetCompatibility = JavaVersion.VERSION_21
+        sourceCompatibility = JavaVersion.toVersion(libs.versions.javaVersion.v21.get())
+        targetCompatibility = JavaVersion.toVersion(libs.versions.javaVersion.v21.get())
     }
 }
