@@ -14,16 +14,15 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.sp
+import com.psbapp.appres.CoreStringRes
 import com.psbapp.uidesign.theme.colors.MaterialThemeColor
 import com.psbapp.uidesign.theme.typography.normalStyle
-import com.psbapp.uidesign.utils.resource.CoreStringRes
 import com.psbapp.utils.downTimer
-
+import gesundheitskiosk.core.resources.generated.resources.did_not_receive_otp
+import gesundheitskiosk.core.resources.generated.resources.send_again
 import kotlinx.coroutines.launch
 import org.jetbrains.compose.resources.getString
 import org.jetbrains.compose.resources.stringResource
-import syncride.resources.coreres.generated.resources.did_not_receive_otp
-import syncride.resources.coreres.generated.resources.send_again
 
 @Composable
 fun ResendCode(

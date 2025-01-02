@@ -15,16 +15,14 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.Dp
+import com.psbapp.appres.CoreDrawableRes
 import com.psbapp.uidesign.theme.colors.MaterialThemeColor
 import com.psbapp.uidesign.theme.dimension.LocalDimensions
 import com.psbapp.uidesign.theme.dimension.MaterialDimension
 import com.psbapp.uidesign.utils.modifier.onClick
-import com.psbapp.uidesign.utils.resource.CoreDrawableRes
-
+import gesundheitskiosk.core.resources.generated.resources.ic_check_white
 import org.jetbrains.compose.resources.DrawableResource
 import org.jetbrains.compose.resources.painterResource
-import syncride.core.uidesign.generated.resources.Res
-import syncride.resources.coreres.generated.resources.ic_check_white
 
 @Composable
 fun PSBCheckBoxLarge(
