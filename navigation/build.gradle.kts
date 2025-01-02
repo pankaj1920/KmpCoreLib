@@ -1,9 +1,10 @@
-import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidLibrary)
+    alias(libs.plugins.composeMultiplatform)
+    alias(libs.plugins.composeCompiler)
 }
 
 kotlin {
@@ -13,7 +14,7 @@ kotlin {
         }
         task("testClasses")
     }
-    
+
     listOf(
         iosX64(),
         iosArm64(),
@@ -27,19 +28,21 @@ kotlin {
 
     sourceSets {
         commonMain.dependencies {
-            //put your multiplatform dependencies here
+            api(libs.navigation.compose)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
+
+
         }
     }
 }
 
 android {
     namespace = "com.psbapp.navigation"
-    compileSdk = 34
+    compileSdk = libs.versions.android.compileSdk.get().toInt()
     defaultConfig {
-        minSdk = 24
+        minSdk = libs.versions.android.minSdk.get().toInt()
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_21

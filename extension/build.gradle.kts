@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidLibrary)
@@ -5,13 +7,12 @@ plugins {
 
 kotlin {
     androidTarget {
-        compilations.all {
-            kotlinOptions {
-                jvmTarget = "1.8"
-            }
+        compilerOptions {
+            jvmTarget.set(JvmTarget.fromTarget(libs.versions.javaVersion.v21.get()))
         }
+        task("testClasses")
     }
-    
+
     listOf(
         iosX64(),
         iosArm64(),
@@ -35,12 +36,12 @@ kotlin {
 
 android {
     namespace = "com.psbapp.extension"
-    compileSdk = 34
+    compileSdk = libs.versions.android.compileSdk.get().toInt()
     defaultConfig {
-        minSdk = 24
+        minSdk = libs.versions.android.minSdk.get().toInt()
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.toVersion(libs.versions.javaVersion.v21.get())
+        targetCompatibility = JavaVersion.toVersion(libs.versions.javaVersion.v21.get())
     }
 }
