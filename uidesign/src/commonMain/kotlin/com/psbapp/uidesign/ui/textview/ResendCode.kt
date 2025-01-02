@@ -14,12 +14,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.sp
+import com.psbapp.appres.CoreStringRes
 import com.psbapp.uidesign.theme.colors.MaterialThemeColor
 import com.psbapp.uidesign.theme.typography.normalStyle
 import com.psbapp.utils.downTimer
-import gesundheitskiosk.resources.coreres.generated.resources.Res
-import gesundheitskiosk.resources.coreres.generated.resources.did_not_receive_otp
-import gesundheitskiosk.resources.coreres.generated.resources.send_again
+import gesundheitskiosk.core.resources.generated.resources.did_not_receive_otp
+import gesundheitskiosk.core.resources.generated.resources.send_again
 import kotlinx.coroutines.launch
 import org.jetbrains.compose.resources.getString
 import org.jetbrains.compose.resources.stringResource
@@ -34,14 +34,14 @@ fun ResendCode(
     resendClick: () -> Unit
 ) {
     val scope = rememberCoroutineScope()
-    val resend = stringResource(Res.string.send_again)
+    val resend = stringResource(CoreStringRes.send_again)
     var resendText by remember { mutableStateOf(resend) }
     var resendAgain by remember { mutableStateOf(true) }
 
     val textDecoration = if (resendAgain) TextDecoration.Underline else null
     Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.Center) {
         PSBText(
-            text = stringResource(Res.string.did_not_receive_otp),
+            text = stringResource(CoreStringRes.did_not_receive_otp),
             fontWeight = textFontWeight,
             style = normalStyle.copy(fontSize = 13.sp, color = textColor)
         )
@@ -60,7 +60,7 @@ fun ResendCode(
                         downTimer(59).collect {
                             if (it == -1) {
                                 resendAgain = true
-                                resendText = getString(Res.string.send_again)
+                                resendText = getString(CoreStringRes.send_again)
                             } else {
                                 resendText = "00:$it"
                                 resendAgain = false

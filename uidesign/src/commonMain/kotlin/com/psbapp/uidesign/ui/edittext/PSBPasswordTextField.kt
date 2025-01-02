@@ -30,14 +30,14 @@ import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.psbapp.appres.CoreDrawableRes
 import com.psbapp.uidesign.theme.colors.MaterialThemeColor
 import com.psbapp.uidesign.theme.typography.blackStyle
 import com.psbapp.uidesign.theme.typography.greyStyle
 import com.psbapp.uidesign.ui.edittext.validation.BaseValidationState
 import com.psbapp.uidesign.ui.textview.PSBText
-import com.psbapp.uidesign.utils.resource.CoreDrawableRes
-import gesundheitskiosk.resources.coreres.generated.resources.ic_password_hide
-import gesundheitskiosk.resources.coreres.generated.resources.ic_password_show
+import gesundheitskiosk.core.resources.generated.resources.ic_password_hide
+import gesundheitskiosk.core.resources.generated.resources.ic_password_show
 import org.jetbrains.compose.resources.painterResource
 
 @Composable

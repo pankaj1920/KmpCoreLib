@@ -15,12 +15,12 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.Dp
+import com.psbapp.appres.CoreDrawableRes
 import com.psbapp.uidesign.theme.colors.MaterialThemeColor
 import com.psbapp.uidesign.theme.dimension.LocalDimensions
 import com.psbapp.uidesign.theme.dimension.MaterialDimension
 import com.psbapp.uidesign.utils.modifier.onClick
-import gesundheitskiosk.resources.coreres.generated.resources.Res
-import gesundheitskiosk.resources.coreres.generated.resources.ic_check_white
+import gesundheitskiosk.core.resources.generated.resources.ic_check_white
 import org.jetbrains.compose.resources.DrawableResource
 import org.jetbrains.compose.resources.painterResource
 
@@ -32,7 +32,7 @@ fun PSBCheckBoxLarge(
     uncheckedColor: Color = MaterialThemeColor.greyColor,
     isEnable: Boolean = true,
     onClick: () -> Unit,
-    icon: DrawableResource = Res.drawable.ic_check_white,
+    icon: DrawableResource = CoreDrawableRes.ic_check_white,
 ) {
     PSBCheckboxContainer(
         onClick = onClick,
@@ -69,7 +69,7 @@ fun PSBCheckBoxSmall(
     uncheckedColor: Color = MaterialThemeColor.greyColor,
     isEnable: Boolean = true,
     onClick: () -> Unit,
-    icon: DrawableResource = Res.drawable.ic_check_white,
+    icon: DrawableResource = CoreDrawableRes.ic_check_white,
 ) {
     PSBCheckboxContainer(
         onClick = onClick,

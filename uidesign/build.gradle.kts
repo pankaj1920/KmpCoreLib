@@ -48,10 +48,10 @@ kotlin {
             api(libs.koin.core)
             api(libs.koin.compose)
             api(libs.kotlin.serialization)
-            api(projects.resources.coreres)
-            api(projects.resources.appres)
+            api(projects.core.resources)
             api(projects.core.utils)
-//            api(projects.core.cmpcalendar)
+            api(projects.core.extension)
+
             implementation("com.kizitonwose.calendar:compose-multiplatform:2.6.1")
 
         }
