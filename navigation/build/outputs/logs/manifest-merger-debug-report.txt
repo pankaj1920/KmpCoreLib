@@ -1,16 +1,16 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/bohra/Desktop/Pankaj/FreeLancer/KMP/Gesundheitskiosk/Gesundheitskiosk/core/navigation/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest7562074474776437871.xml:2:13-83
-INJECTED from /Users/bohra/Desktop/Pankaj/FreeLancer/KMP/Gesundheitskiosk/Gesundheitskiosk/core/navigation/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest7562074474776437871.xml:2:13-83
+ADDED from /Users/bohra/Desktop/Pankaj/FreeLancer/KMP/SyncRide/core/navigation/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest7492692573058874319.xml:2:13-83
+INJECTED from /Users/bohra/Desktop/Pankaj/FreeLancer/KMP/SyncRide/core/navigation/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest7492692573058874319.xml:2:13-83
 	package
-		INJECTED from /Users/bohra/Desktop/Pankaj/FreeLancer/KMP/Gesundheitskiosk/Gesundheitskiosk/core/navigation/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest7562074474776437871.xml
+		INJECTED from /Users/bohra/Desktop/Pankaj/FreeLancer/KMP/SyncRide/core/navigation/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest7492692573058874319.xml
 	xmlns:android
-		ADDED from /Users/bohra/Desktop/Pankaj/FreeLancer/KMP/Gesundheitskiosk/Gesundheitskiosk/core/navigation/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest7562074474776437871.xml:2:23-81
+		ADDED from /Users/bohra/Desktop/Pankaj/FreeLancer/KMP/SyncRide/core/navigation/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest7492692573058874319.xml:2:23-81
 uses-sdk
-INJECTED from /Users/bohra/Desktop/Pankaj/FreeLancer/KMP/Gesundheitskiosk/Gesundheitskiosk/core/navigation/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest7562074474776437871.xml reason: use-sdk injection requested
-INJECTED from /Users/bohra/Desktop/Pankaj/FreeLancer/KMP/Gesundheitskiosk/Gesundheitskiosk/core/navigation/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest7562074474776437871.xml
-INJECTED from /Users/bohra/Desktop/Pankaj/FreeLancer/KMP/Gesundheitskiosk/Gesundheitskiosk/core/navigation/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest7562074474776437871.xml
+INJECTED from /Users/bohra/Desktop/Pankaj/FreeLancer/KMP/SyncRide/core/navigation/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest7492692573058874319.xml reason: use-sdk injection requested
+INJECTED from /Users/bohra/Desktop/Pankaj/FreeLancer/KMP/SyncRide/core/navigation/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest7492692573058874319.xml
+INJECTED from /Users/bohra/Desktop/Pankaj/FreeLancer/KMP/SyncRide/core/navigation/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest7492692573058874319.xml
 	android:targetSdkVersion
-		INJECTED from /Users/bohra/Desktop/Pankaj/FreeLancer/KMP/Gesundheitskiosk/Gesundheitskiosk/core/navigation/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest7562074474776437871.xml
+		INJECTED from /Users/bohra/Desktop/Pankaj/FreeLancer/KMP/SyncRide/core/navigation/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest7492692573058874319.xml
 	android:minSdkVersion
-		INJECTED from /Users/bohra/Desktop/Pankaj/FreeLancer/KMP/Gesundheitskiosk/Gesundheitskiosk/core/navigation/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest7562074474776437871.xml
+		INJECTED from /Users/bohra/Desktop/Pankaj/FreeLancer/KMP/SyncRide/core/navigation/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest7492692573058874319.xml
