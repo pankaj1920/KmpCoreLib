@@ -31,13 +31,11 @@ import coil3.request.ImageRequest
 import coil3.request.crossfade
 import coil3.size.Precision
 import coil3.util.DebugLogger
-import com.psbapp.appres.CoreDrawableRes
+import com.psbapp.appres.CoreRes
 import com.psbapp.uidesign.theme.dimension.MaterialDimension
 import com.psbapp.uidesign.ui.shimmer.shimmerEffect
 import com.psbapp.uidesign.utils.modifier.ifCondition
 import com.psbapp.utils.EMPTY
-import com.psbapp.utils.logger.Print
-import syncride.core.resources.generated.resources.img_placeholder
 import org.jetbrains.compose.resources.DrawableResource
 import org.jetbrains.compose.resources.painterResource
 
@@ -55,8 +53,8 @@ fun PSBNetworkImage(
     shape: Shape = RoundedCornerShape(roundCorner),
     onSuccess: () -> Unit = {},
     onError: (State.Error) -> Unit = {},
-    placeholder: DrawableResource = CoreDrawableRes.img_placeholder,
-    errorPainter: DrawableResource = CoreDrawableRes.img_placeholder
+    placeholder: DrawableResource = CoreRes.Drawable.img_placeholder,
+    errorPainter: DrawableResource = CoreRes.Drawable.img_placeholder
 ) {
 
     var isImageLoading by remember { mutableStateOf(true) }

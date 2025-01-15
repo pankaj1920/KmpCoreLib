@@ -15,11 +15,10 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.DpSize
 import coil3.compose.AsyncImagePainter.State
-import com.psbapp.appres.CoreDrawableRes
+import com.psbapp.appres.CoreRes
 import com.psbapp.uidesign.theme.colors.MaterialThemeColor
 import com.psbapp.uidesign.theme.dimension.MaterialDimension
 import com.psbapp.utils.EMPTY
-import syncride.core.resources.generated.resources.img_placeholder
 import org.jetbrains.compose.resources.DrawableResource
 
 @Composable
@@ -56,8 +55,8 @@ fun PSBBgNetworkImage(
     contentScale: ContentScale = ContentScale.Crop,
     onSuccess: () -> Unit = {},
     onError: (State.Error) -> Unit = {},
-    placeholder: DrawableResource = CoreDrawableRes.img_placeholder,
-    errorPainter: DrawableResource = CoreDrawableRes.img_placeholder,
+    placeholder: DrawableResource = CoreRes.Drawable.img_placeholder,
+    errorPainter: DrawableResource = CoreRes.Drawable.img_placeholder,
     imageModifier: Modifier = Modifier,
     bgColor: Color,
     tintColor: Color? = null,

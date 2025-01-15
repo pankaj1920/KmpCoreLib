@@ -13,10 +13,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.Dp
+import com.psbapp.appres.CoreRes.FileRes
 import com.psbapp.uidesign.theme.colors.MaterialThemeColor
 import com.psbapp.uidesign.theme.dimension.LocalDimensions
 import com.psbapp.uidesign.theme.dimension.MaterialDimension
-import syncride.core.resources.generated.resources.Res
 import io.github.alexzhirkevich.compottie.Compottie
 import io.github.alexzhirkevich.compottie.DotLottie
 import io.github.alexzhirkevich.compottie.LottieCompositionSpec
@@ -53,7 +53,7 @@ fun LottieLoadingUi(
     val lottieFilePath = "files/app_loader.lottie"
     val introAnimationComposition by rememberLottieComposition() {
         LottieCompositionSpec.DotLottie(
-            Res.readBytes(lottieFilePath),
+            FileRes.readBytes(lottieFilePath),
         )
     }
     val animationState = animateLottieCompositionAsState(
