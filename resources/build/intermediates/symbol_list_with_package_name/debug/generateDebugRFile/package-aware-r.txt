@@ -1,4 +1,0 @@
-com.psbapp.coreres
-color ic_launcher_background
-color white
-string app_name
