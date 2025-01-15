@@ -1,6 +1,5 @@
 package com.psbapp.uidesign.ui.textview
 
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -15,6 +14,7 @@ import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.TextUnit
 import com.psbapp.uidesign.theme.colors.MaterialThemeColor
 import com.psbapp.uidesign.theme.dimension.TextDimension
+import com.psbapp.uidesign.utils.modifier.onClick
 
 @Composable
 fun PSBTextWithAction(
@@ -57,7 +57,7 @@ fun PSBTextWithAction(
 
     Text(
         text = annotatedText,
-        modifier = modifier.fillMaxWidth().clickable {
+        modifier = modifier.fillMaxWidth().onClick {
             annotatedText.getStringAnnotations(
                 tag = "ACTION",
                 start = 0,

@@ -11,6 +11,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import com.psbapp.uidesign.theme.colors.BgColor
 import com.psbapp.uidesign.theme.colors.MaterialThemeColor
 import com.psbapp.uidesign.theme.dimension.MaterialDimension
 import com.psbapp.uidesign.ui.textview.PSBText
@@ -21,19 +22,20 @@ import org.jetbrains.compose.resources.painterResource
 fun PSBBottomNavBar(
     bottomNavItemList: List<BottomNavItemModel>,
     onBottomNavClick: (route: Any) -> Unit,
+    currentRoute: String?,
 ) {
     var navigationSelectedItem by remember { mutableStateOf(0) }
 
-
-
-    NavigationBar {
+    NavigationBar(
+        containerColor = BgColor
+    ) {
         //getting the list of bottom navigation items for our data class
         bottomNavItemList.forEachIndexed { index, navigationItem ->
-
             val fontWeight =
-                if (index == navigationSelectedItem) TextWeight.SEMI_BOLD  else TextWeight.REGULAR
+                if (index == navigationSelectedItem) TextWeight.SEMI_BOLD else TextWeight.REGULAR
+            val isSelected = currentRoute?.trim() == navigationItem.route.toString().trim()
             NavigationBarItem(
-                selected = index == navigationSelectedItem,
+                selected = isSelected,
                 label = {
                     PSBText(navigationItem.title, fontWeight = fontWeight)
                 },
@@ -45,10 +47,10 @@ fun PSBBottomNavBar(
                     )
                 },
                 onClick = {
-                    navigationSelectedItem = index
+
                     onBottomNavClick(navigationItem.route)
                 },
-                colors= NavigationBarItemDefaults.colors(
+                colors = NavigationBarItemDefaults.colors(
                     selectedIconColor = MaterialThemeColor.whiteColor,
                     selectedTextColor = MaterialThemeColor.primaryDarkColor,
                     indicatorColor = MaterialThemeColor.primaryDarkColor

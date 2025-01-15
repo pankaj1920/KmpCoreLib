@@ -31,5 +31,7 @@ val NotificationSuccessColor = Color(0xff12B76A)
 val NotificationErrorColor = Color(0xffF04438)
 val NotificationPendingColor = Color(0xffF7900A)
 val NotificationInfoColor = Color(0xff2369F6)
+val NotificationPromotionalColor = Color(0xff000000)
+val NotificationUndefinedColor = Color(0xff4f6450)
 
 

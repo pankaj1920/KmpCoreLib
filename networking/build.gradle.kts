@@ -3,12 +3,15 @@ import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidLibrary)
+    alias(libs.plugins.composeMultiplatform)
+    alias(libs.plugins.composeCompiler)
+    alias(libs.plugins.kotlinSerialization)
 }
 
 kotlin {
     androidTarget {
         compilerOptions {
-            jvmTarget.set(JvmTarget.JVM_21)
+            jvmTarget.set(JvmTarget.fromTarget(libs.versions.javaVersion.v21.get()))
         }
         task("testClasses")
     }
@@ -25,8 +28,27 @@ kotlin {
     }
 
     sourceSets {
+        androidMain.dependencies {
+            implementation (libs.ktor.client.android.engine)
+            implementation (libs.ktor.client.android)
+        }
+        iosMain.dependencies {
+            implementation(libs.ktor.client.ios)
+            implementation(libs.ktor.client.ios.darwin)
+        }
         commonMain.dependencies {
-            //put your multiplatform dependencies here
+            implementation(libs.kotlin.serialization)
+
+            // ktor
+            implementation (libs.ktor.client.core)
+            implementation(libs.ktor.client.serializer)
+            implementation(libs.ktor.client.auth)
+            implementation(libs.ktor.client.content.negotiation)
+            implementation(libs.ktor.client.logging) // enable http logging
+            implementation(libs.ktor.json.serializer)
+            implementation(projects.core.utils)
+            implementation(projects.core.di)
+            implementation(projects.core.storage.datastore)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
@@ -41,7 +63,7 @@ android {
         minSdk = libs.versions.android.minSdk.get().toInt()
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_21
-        targetCompatibility = JavaVersion.VERSION_21
+        sourceCompatibility = JavaVersion.toVersion(libs.versions.javaVersion.v21.get())
+        targetCompatibility = JavaVersion.toVersion(libs.versions.javaVersion.v21.get())
     }
 }

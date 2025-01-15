@@ -36,9 +36,9 @@ import com.psbapp.uidesign.theme.typography.blackStyle
 import com.psbapp.uidesign.theme.typography.greyStyle
 import com.psbapp.uidesign.ui.edittext.validation.BaseValidationState
 import com.psbapp.uidesign.ui.textview.PSBText
+import gesundheitskiosk.core.resources.generated.resources.ic_password_hide
+import gesundheitskiosk.core.resources.generated.resources.ic_password_show
 import org.jetbrains.compose.resources.painterResource
-import syncride.core.resources.generated.resources.ic_password_hide
-import syncride.core.resources.generated.resources.ic_password_show
 
 @Composable
 fun PSBPasswordTextField(

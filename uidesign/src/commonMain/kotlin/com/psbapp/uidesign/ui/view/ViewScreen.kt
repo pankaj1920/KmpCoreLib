@@ -1,6 +1,8 @@
 package com.psbapp.uidesign.ui.view
 
-import androidx.compose.foundation.background
+import ContentWithMessageBar
+import MessageBarPosition
+import MessageBarState
 import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -19,19 +21,21 @@ import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import com.psbapp.uidesign.theme.colors.BgColor
+import com.psbapp.uidesign.theme.colors.MaterialThemeColor
 import com.psbapp.uidesign.ui.imageview.PSBVectorImageView
+import com.psbapp.uidesign.ui.loader.LottieLoadingUi
 import com.psbapp.uidesign.ui.statusbar.SetNavigationBarColor
 import com.psbapp.uidesign.ui.statusbar.SetStatusBarColor
-import com.psbapp.uidesign.ui.toastbar.ToastBar
 import com.psbapp.uidesign.ui.toastbar.ToastBarPosition
 import com.psbapp.uidesign.ui.toastbar.ToastBarState
 import com.psbapp.uidesign.ui.toastbar.rememberToastBarState
 import com.psbapp.uidesign.utils.modifier.ifCondition
-
 import org.jetbrains.compose.resources.DrawableResource
+import rememberMessageBarState
 
 @Composable
 fun ViewScreen(
+    loading: Boolean = false,
     modifier: Modifier = Modifier,
     bgImage: DrawableResource? = null,
     backgroundColor: Color = BgColor,
@@ -41,6 +45,8 @@ fun ViewScreen(
     snackBarModifier: Modifier = Modifier,
     toastBarState: ToastBarState = rememberToastBarState(),
     position: ToastBarPosition = ToastBarPosition.TOP,
+    messageBarState: MessageBarState = rememberMessageBarState(),
+    messageBarPosition: MessageBarPosition = MessageBarPosition.TOP,
     visibilityDuration: Long = 3000L,
     showCopyButton: Boolean = false,
     onMessageCopied: (() -> Unit)? = null,
@@ -55,33 +61,58 @@ fun ViewScreen(
     statusBarColor?.let { SetStatusBarColor(it) }
     navigationBarColor?.let { SetNavigationBarColor(it) }
 
-    Box(modifier = Modifier.fillMaxSize().background(backgroundColor)) {
-        bgImage?.let {
-            PSBVectorImageView(
-                image = bgImage,
-                modifier = Modifier.fillMaxSize(),
-                contentScale = ContentScale.Crop
-            )
-        }
-
-        Column(
-            modifier = Modifier.fillMaxSize()
-                .pointerInput(Unit) {
-                    detectTapGestures { _ ->
-                        keyboardController?.hide()
-                    }
-                }
-                .ifCondition(isFullScreen.not()) { statusBarsPadding().navigationBarsPadding() }) {
-            ToastBar(
-                toastBarState = toastBarState,
-                modifier = snackBarModifier,
-                position = position,
-                contentBackgroundColor = contentBackgroundColor,
-            ) {
-                content()
+    if (loading) {
+        LottieLoadingUi(bgColor = backgroundColor)
+    } else {
+        Box(modifier = Modifier.fillMaxSize()) {
+            bgImage?.let {
+                PSBVectorImageView(
+                    image = bgImage,
+                    modifier = Modifier.fillMaxSize(),
+                    contentScale = ContentScale.Crop
+                )
             }
 
+            Column(
+                modifier = Modifier.fillMaxSize()
+                    .pointerInput(Unit) {
+                        detectTapGestures { _ ->
+                            keyboardController?.hide()
+                        }
+                    }
+                    .ifCondition(isFullScreen.not()) { statusBarsPadding().navigationBarsPadding() }) {
+                /* ToastBar(
+                     toastBarState = toastBarState,
+                     modifier = snackBarModifier,
+                     position = position,
+                     contentBackgroundColor = contentBackgroundColor,
+                 ) {
+                     content()
+                 }*/
+
+                ContentWithMessageBar(
+                    messageBarState = messageBarState,
+                    modifier = snackBarModifier,
+                    position = messageBarPosition,
+                    visibilityDuration = visibilityDuration,
+                    showCopyButton = showCopyButton,
+                    onMessageCopied = onMessageCopied,
+                    successIcon = successIcon,
+                    errorIcon = errorIcon,
+                    errorMaxLines = errorMaxLines,
+                    successMaxLines = successMaxLines,
+                    contentBackgroundColor = contentBackgroundColor,
+                    successContainerColor = MaterialThemeColor.primaryDarkColor,
+                    successContentColor = MaterialThemeColor.whiteColor,
+                    errorContainerColor = MaterialThemeColor.redColor,
+                    errorContentColor = MaterialThemeColor.whiteColor,
+                ) {
+                    content()
+                }
+
+            }
         }
     }
+
 }
 

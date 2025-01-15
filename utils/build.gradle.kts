@@ -5,6 +5,7 @@ plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.composeMultiplatform)
     alias(libs.plugins.composeCompiler)
+    alias(libs.plugins.kotlinSerialization)
 }
 
 kotlin {
@@ -30,6 +31,9 @@ kotlin {
         commonMain.dependencies {
             api(compose.runtime)
             api(compose.foundation)
+            api(libs.kotlin.serialization)
+            implementation(libs.kotlinx.datetime)
+            implementation(projects.core.di)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)

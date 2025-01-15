@@ -4,12 +4,15 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Alignment.Companion.CenterVertically
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.style.TextOverflow
+import com.psbapp.uidesign.theme.dimension.MaterialDimension
 import com.psbapp.uidesign.theme.dimension.TextDimension
 import com.psbapp.uidesign.theme.typography.blackStyle
 import com.psbapp.uidesign.ui.textview.PSBText
@@ -39,10 +42,13 @@ fun ToolBar(
         }
         PSBText(
             text = title,
-            style = titleStyle,
+            style = titleStyle.copy(),
             textAlign = TextAlign.Center,
-            modifier = titleModifier.fillMaxWidth(),
-            fontWeight = fontWeight
+            modifier = titleModifier.fillMaxWidth().padding(horizontal = MaterialDimension.dp40),
+            fontWeight = fontWeight,
+            maxLines = 1,
+            softWrap = true,
+            overflow = TextOverflow.Ellipsis
         )
     }
 

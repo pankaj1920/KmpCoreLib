@@ -15,14 +15,13 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.TextUnit
-import com.psbapp.appres.CoreFontRes
-
+import gesundheitskiosk.core.resources.generated.resources.Res
+import gesundheitskiosk.core.resources.generated.resources.satoshi_bold
+import gesundheitskiosk.core.resources.generated.resources.satoshi_edium
+import gesundheitskiosk.core.resources.generated.resources.satoshi_regular
 
 import org.jetbrains.compose.resources.ExperimentalResourceApi
 import org.jetbrains.compose.resources.Font
-import syncride.core.resources.generated.resources.satoshi_bold
-import syncride.core.resources.generated.resources.satoshi_edium
-import syncride.core.resources.generated.resources.satoshi_regular
 
 
 @Composable
@@ -65,10 +64,10 @@ fun PSBText(
 @Composable
 fun getFontFamily(fontWeight: TextWeight): FontFamily {
     return when (fontWeight) {
-        TextWeight.REGULAR -> FontFamily(Font(CoreFontRes.satoshi_regular))
-        TextWeight.MEDIUM -> FontFamily(Font(CoreFontRes.satoshi_edium))
-        TextWeight.SEMI_BOLD -> FontFamily(Font(CoreFontRes.satoshi_edium))
-        TextWeight.BOLD -> FontFamily(Font(CoreFontRes.satoshi_bold))
-        TextWeight.EXTRA_BOLD -> FontFamily(Font(CoreFontRes.satoshi_bold))
+        TextWeight.REGULAR -> FontFamily(Font(Res.font.satoshi_regular))
+        TextWeight.MEDIUM -> FontFamily(Font(Res.font.satoshi_edium))
+        TextWeight.SEMI_BOLD -> FontFamily(Font(Res.font.satoshi_edium))
+        TextWeight.BOLD -> FontFamily(Font(Res.font.satoshi_bold))
+        TextWeight.EXTRA_BOLD -> FontFamily(Font(Res.font.satoshi_bold))
     }
 }

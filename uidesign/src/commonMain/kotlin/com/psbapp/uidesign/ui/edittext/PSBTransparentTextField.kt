@@ -15,7 +15,6 @@ import androidx.compose.ui.focus.FocusRequester
 import androidx.compose.ui.focus.focusRequester
 import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.psbapp.uidesign.theme.colors.MaterialThemeColor
@@ -50,7 +49,7 @@ fun PSBTransparentTextField(
             }
         },
         enabled = enable,
-        keyboardOptions = keyboardOptions.copy(imeAction = ImeAction.Done),
+        keyboardOptions = keyboardOptions,
         keyboardActions = keyboardActions,
         textStyle = textStyle,
         cursorBrush = cursorBrush,

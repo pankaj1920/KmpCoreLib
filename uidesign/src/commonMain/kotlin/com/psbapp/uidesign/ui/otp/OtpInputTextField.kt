@@ -76,7 +76,7 @@ fun OtpInputTextField(
                         showInvalidOTP = showInvalidOTP,
                         isFocused = isFocused && index == otpText.length
                     )
-                    Spacer(modifier = Modifier.width(MaterialDimension.dp10))
+                    Spacer(modifier = Modifier.width(MaterialDimension.dp26))
                 }
             }
         }

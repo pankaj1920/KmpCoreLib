@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
@@ -27,6 +28,7 @@ import com.kizitonwose.calendar.core.DayPosition
 import com.kizitonwose.calendar.core.YearMonth
 import com.kizitonwose.calendar.core.daysOfWeek
 import com.kizitonwose.calendar.core.minusMonths
+import com.kizitonwose.calendar.core.now
 import com.kizitonwose.calendar.core.plusMonths
 import com.psbapp.uidesign.theme.colors.BgColor
 import com.psbapp.uidesign.theme.colors.MaterialThemeColor
@@ -40,14 +42,29 @@ import com.psbapp.uidesign.ui.textview.PSBText
 import com.psbapp.uidesign.ui.textview.TextWeight
 import kotlinx.coroutines.launch
 import kotlinx.datetime.DayOfWeek
+import kotlinx.datetime.LocalDate
 
 @Composable
-fun PSBMonthScrollCalendar(adjacentMonths: Int = 500, isSingleSelection: Boolean = true) {
+fun PSBMonthScrollCalendar(
+    isCurrentDateSelected: Boolean = true,
+    adjacentMonths: Int = 500,
+    isSingleSelection: Boolean = true,
+    onDateSelected: (date: String) -> Unit
+) {
     val currentMonth = remember { YearMonth.now() }
     val startMonth = remember { currentMonth.minusMonths(adjacentMonths) }
     val endMonth = remember { currentMonth.plusMonths(adjacentMonths) }
     val selections = remember { mutableStateListOf<CalendarDay>() }
+    val today = remember { LocalDate.now() }
     val daysOfWeek = remember { daysOfWeek() }
+    val currentDay =
+        remember { CalendarDay(date = today, position = DayPosition.MonthDate) } // Get today's date
+
+    LaunchedEffect(Unit) {
+        if (selections.isEmpty() && isCurrentDateSelected) {
+            selections.add(currentDay)
+        }
+    }
     Column(
         modifier = Modifier
             .background(Color.White).padding(MaterialDimension.dp5),
@@ -79,17 +96,18 @@ fun PSBMonthScrollCalendar(adjacentMonths: Int = 500, isSingleSelection: Boolean
                 .testTag("Calendar"),
             state = state,
             dayContent = { day ->
-                Day(day, isSelected = selections.contains(day)) { clicked ->
+                Day(day, isSelected = selections.contains(day)) { calendarDay ->
                     if (isSingleSelection) {
                         selections.clear()
-                        selections.add(clicked)
+                        selections.add(calendarDay)
                     } else {
-                        if (selections.contains(clicked)) {
-                            selections.remove(clicked)
+                        if (selections.contains(calendarDay)) {
+                            selections.remove(calendarDay)
                         } else {
-                            selections.add(clicked)
+                            selections.add(calendarDay)
                         }
                     }
+                    onDateSelected(day.date.toString())
 
                 }
             },

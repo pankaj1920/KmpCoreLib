@@ -7,10 +7,13 @@ import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import coil3.annotation.ExperimentalCoilApi
+import coil3.compose.setSingletonImageLoaderFactory
 import com.psbapp.uidesign.theme.colors.ColorsPalette
 import com.psbapp.uidesign.theme.colors.ThemeColorsPalette
 import com.psbapp.uidesign.theme.dimension.LocalDimensions
 import com.psbapp.uidesign.theme.dimension.PSBDimens
+import com.psbapp.uidesign.ui.imageview.getAsyncImageLoader
 
 
 enum class ThemeType {
@@ -18,6 +21,7 @@ enum class ThemeType {
     APP_THEME
 }
 
+@OptIn(ExperimentalCoilApi::class)
 @Composable
 fun PSBTheme(
     lightPalette: ColorsPalette = ThemeColorsPalette.current,
@@ -26,6 +30,9 @@ fun PSBTheme(
     content: @Composable() () -> Unit
 ) {
 
+    setSingletonImageLoaderFactory { context ->
+        getAsyncImageLoader(context)
+    }
 
     val isDarkTheme by remember { mutableStateOf(systemIsDark) }
     val colors = if (isDarkTheme) darkPalette else lightPalette

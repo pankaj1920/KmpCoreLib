@@ -33,6 +33,9 @@ kotlin {
             api(compose.preview)
             api(libs.androidx.activity.compose)
             api(libs.koin.android)
+            api(libs.coil)
+            api(libs.coil.gif)
+            api(libs.coil.compose)
         }
         commonMain.dependencies {
             //put your multiplatform dependencies here
@@ -51,8 +54,25 @@ kotlin {
             api(projects.core.resources)
             api(projects.core.utils)
             api(projects.core.extension)
+            api(projects.core.di)
+            api(projects.core.storage.datastore)
+            api(projects.core.networking)
+            api(libs.stevdza.san.messagebarkmp)
+            api(libs.compottie)
+            api(libs.compottie.dot)
+            api(libs.compottie.network)
+            api(libs.compottie.resources)
+
+            // Coil Image loading
+            @OptIn(org.jetbrains.compose.ExperimentalComposeLibrary::class)
+            api(libs.coil3.compose)
+            api(libs.coil.mp)
+            api(libs.coil.network.ktor)
+            api(libs.coil.compose.core)
 
             implementation("com.kizitonwose.calendar:compose-multiplatform:2.6.1")
+
+            api(libs.richeditor.compose)
 
         }
         commonTest.dependencies {
