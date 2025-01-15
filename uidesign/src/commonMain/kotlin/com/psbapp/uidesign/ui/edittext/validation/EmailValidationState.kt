@@ -1,11 +1,8 @@
 package com.psbapp.uidesign.ui.edittext.validation
 
-import com.psbapp.appres.CoreStringRes
+import com.psbapp.appres.CoreRes
 import com.psbapp.uidesign.ui.edittext.validation.BaseValidationState.Companion.errorMessage
-import syncride.core.resources.generated.resources.email_empty_err
-import syncride.core.resources.generated.resources.incorrect_email_err
 import org.jetbrains.compose.resources.getString
-
 
 
 class EmailValidationStateState : BaseValidationState() {
@@ -18,12 +15,12 @@ class EmailValidationStateState : BaseValidationState() {
 private suspend fun String.isEmailValid(): Boolean {
     return when {
         this.isEmpty() -> {
-            errorMessage = getString(CoreStringRes.email_empty_err)
+            errorMessage = getString(CoreRes.String.email_empty_err)
             false
         }
 
         this.isValidEmail().not() -> {
-            errorMessage = getString(CoreStringRes.incorrect_email_err)
+            errorMessage = getString(CoreRes.String.incorrect_email_err)
             false
         }
 

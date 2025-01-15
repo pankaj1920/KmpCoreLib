@@ -30,14 +30,12 @@ import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.psbapp.appres.CoreDrawableRes
+import com.psbapp.appres.CoreRes
 import com.psbapp.uidesign.theme.colors.MaterialThemeColor
 import com.psbapp.uidesign.theme.typography.blackStyle
 import com.psbapp.uidesign.theme.typography.greyStyle
 import com.psbapp.uidesign.ui.edittext.validation.BaseValidationState
 import com.psbapp.uidesign.ui.textview.PSBText
-import syncride.core.resources.generated.resources.ic_password_hide
-import syncride.core.resources.generated.resources.ic_password_show
 import org.jetbrains.compose.resources.painterResource
 
 @Composable
@@ -124,13 +122,13 @@ fun PSBPasswordTextField(
 
                                 when (isPasswordVisible.value) {
                                     true -> Icon(
-                                        painter = painterResource(CoreDrawableRes.ic_password_show),
+                                        painter = painterResource(CoreRes.Drawable.ic_password_show),
                                         contentDescription = null,
                                         tint = MaterialThemeColor.primaryDarkColor,
                                     )
 
                                     false -> Icon(
-                                        painter = painterResource(CoreDrawableRes.ic_password_hide),
+                                        painter = painterResource(CoreRes.Drawable.ic_password_hide),
                                         contentDescription = null,
                                         tint = MaterialThemeColor.primaryDarkColor,
                                     )
