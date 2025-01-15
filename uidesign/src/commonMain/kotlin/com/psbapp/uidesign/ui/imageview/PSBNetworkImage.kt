@@ -37,7 +37,7 @@ import com.psbapp.uidesign.ui.shimmer.shimmerEffect
 import com.psbapp.uidesign.utils.modifier.ifCondition
 import com.psbapp.utils.EMPTY
 import com.psbapp.utils.logger.Print
-import gesundheitskiosk.core.resources.generated.resources.img_placeholder
+import syncride.core.resources.generated.resources.img_placeholder
 import org.jetbrains.compose.resources.DrawableResource
 import org.jetbrains.compose.resources.painterResource
 

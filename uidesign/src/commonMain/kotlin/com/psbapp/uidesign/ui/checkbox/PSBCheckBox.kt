@@ -20,7 +20,7 @@ import com.psbapp.uidesign.theme.colors.MaterialThemeColor
 import com.psbapp.uidesign.theme.dimension.LocalDimensions
 import com.psbapp.uidesign.theme.dimension.MaterialDimension
 import com.psbapp.uidesign.utils.modifier.onClick
-import gesundheitskiosk.core.resources.generated.resources.ic_check_white
+import syncride.core.resources.generated.resources.ic_check_white
 import org.jetbrains.compose.resources.DrawableResource
 import org.jetbrains.compose.resources.painterResource
 

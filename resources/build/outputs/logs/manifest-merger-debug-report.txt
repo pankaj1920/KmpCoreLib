@@ -1,0 +1,16 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/bohra/Desktop/Pankaj/FreeLancer/KMP/SyncRide/core/resources/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest9226072799882432070.xml:2:13-83
+INJECTED from /Users/bohra/Desktop/Pankaj/FreeLancer/KMP/SyncRide/core/resources/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest9226072799882432070.xml:2:13-83
+	package
+		INJECTED from /Users/bohra/Desktop/Pankaj/FreeLancer/KMP/SyncRide/core/resources/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest9226072799882432070.xml
+	xmlns:android
+		ADDED from /Users/bohra/Desktop/Pankaj/FreeLancer/KMP/SyncRide/core/resources/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest9226072799882432070.xml:2:23-81
+uses-sdk
+INJECTED from /Users/bohra/Desktop/Pankaj/FreeLancer/KMP/SyncRide/core/resources/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest9226072799882432070.xml reason: use-sdk injection requested
+INJECTED from /Users/bohra/Desktop/Pankaj/FreeLancer/KMP/SyncRide/core/resources/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest9226072799882432070.xml
+INJECTED from /Users/bohra/Desktop/Pankaj/FreeLancer/KMP/SyncRide/core/resources/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest9226072799882432070.xml
+	android:targetSdkVersion
+		INJECTED from /Users/bohra/Desktop/Pankaj/FreeLancer/KMP/SyncRide/core/resources/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest9226072799882432070.xml
+	android:minSdkVersion
+		INJECTED from /Users/bohra/Desktop/Pankaj/FreeLancer/KMP/SyncRide/core/resources/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest9226072799882432070.xml

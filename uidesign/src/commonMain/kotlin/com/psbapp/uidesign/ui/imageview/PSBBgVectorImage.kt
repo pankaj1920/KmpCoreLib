@@ -19,7 +19,7 @@ import com.psbapp.appres.CoreDrawableRes
 import com.psbapp.uidesign.theme.colors.MaterialThemeColor
 import com.psbapp.uidesign.theme.dimension.MaterialDimension
 import com.psbapp.utils.EMPTY
-import gesundheitskiosk.core.resources.generated.resources.img_placeholder
+import syncride.core.resources.generated.resources.img_placeholder
 import org.jetbrains.compose.resources.DrawableResource
 
 @Composable

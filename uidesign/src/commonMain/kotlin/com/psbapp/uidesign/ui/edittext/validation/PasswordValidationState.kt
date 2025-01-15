@@ -2,9 +2,9 @@ package com.psbapp.uidesign.ui.edittext.validation
 
 import com.psbapp.appres.CoreStringRes
 import com.psbapp.uidesign.ui.edittext.validation.BaseValidationState.Companion.errorMessage
-import gesundheitskiosk.core.resources.generated.resources.invalid_password_err
-import gesundheitskiosk.core.resources.generated.resources.password_and_confirm_password_not_matched_err
-import gesundheitskiosk.core.resources.generated.resources.password_empty_err
+import syncride.core.resources.generated.resources.invalid_password_err
+import syncride.core.resources.generated.resources.password_and_confirm_password_not_matched_err
+import syncride.core.resources.generated.resources.password_empty_err
 import org.jetbrains.compose.resources.getString
 
 

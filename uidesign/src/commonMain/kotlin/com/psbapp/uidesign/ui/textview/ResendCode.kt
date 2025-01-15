@@ -18,8 +18,8 @@ import com.psbapp.appres.CoreStringRes
 import com.psbapp.uidesign.theme.colors.MaterialThemeColor
 import com.psbapp.uidesign.theme.typography.normalStyle
 import com.psbapp.utils.downTimer
-import gesundheitskiosk.core.resources.generated.resources.did_not_receive_otp
-import gesundheitskiosk.core.resources.generated.resources.send_again
+import syncride.core.resources.generated.resources.did_not_receive_otp
+import syncride.core.resources.generated.resources.send_again
 import kotlinx.coroutines.launch
 import org.jetbrains.compose.resources.getString
 import org.jetbrains.compose.resources.stringResource

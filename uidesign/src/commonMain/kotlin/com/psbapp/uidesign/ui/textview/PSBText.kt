@@ -15,10 +15,10 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.TextUnit
-import gesundheitskiosk.core.resources.generated.resources.Res
-import gesundheitskiosk.core.resources.generated.resources.satoshi_bold
-import gesundheitskiosk.core.resources.generated.resources.satoshi_edium
-import gesundheitskiosk.core.resources.generated.resources.satoshi_regular
+import syncride.core.resources.generated.resources.Res
+import syncride.core.resources.generated.resources.satoshi_bold
+import syncride.core.resources.generated.resources.satoshi_edium
+import syncride.core.resources.generated.resources.satoshi_regular
 
 import org.jetbrains.compose.resources.ExperimentalResourceApi
 import org.jetbrains.compose.resources.Font

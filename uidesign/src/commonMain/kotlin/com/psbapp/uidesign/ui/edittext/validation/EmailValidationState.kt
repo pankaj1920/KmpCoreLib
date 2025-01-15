@@ -2,8 +2,8 @@ package com.psbapp.uidesign.ui.edittext.validation
 
 import com.psbapp.appres.CoreStringRes
 import com.psbapp.uidesign.ui.edittext.validation.BaseValidationState.Companion.errorMessage
-import gesundheitskiosk.core.resources.generated.resources.email_empty_err
-import gesundheitskiosk.core.resources.generated.resources.incorrect_email_err
+import syncride.core.resources.generated.resources.email_empty_err
+import syncride.core.resources.generated.resources.incorrect_email_err
 import org.jetbrains.compose.resources.getString
 
 
