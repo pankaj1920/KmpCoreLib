@@ -46,9 +46,9 @@ kotlin {
             implementation(libs.ktor.client.content.negotiation)
             implementation(libs.ktor.client.logging) // enable http logging
             implementation(libs.ktor.json.serializer)
-            implementation(projects.core.utils)
-//            implementation(projects.core.di)
-            implementation(projects.core.storage.datastore)
+            implementation(projects.kmpCoreLib.utils)
+            implementation(projects.kmpCoreLib.di)
+            implementation(projects.kmpCoreLib.storage.datastore)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)

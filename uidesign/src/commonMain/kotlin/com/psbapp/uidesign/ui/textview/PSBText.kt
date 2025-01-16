@@ -35,9 +35,10 @@ fun PSBText(
     maxLines: Int = Int.MAX_VALUE,
     minLines: Int = 1,
     onTextLayout: ((TextLayoutResult) -> Unit)? = null,
-    style: TextStyle = LocalTextStyle.current
+    style: TextStyle = LocalTextStyle.current,
+    fontFamily: FontFamily = getFontFamily(fontWeight)
 ) {
-    val fontFamily = getFontFamily(fontWeight)
+
     Text(
         text = text,
         modifier = modifier,
@@ -65,5 +66,6 @@ fun getFontFamily(fontWeight: TextWeight): FontFamily {
         TextWeight.SEMI_BOLD -> FontFamily(Font(CoreRes.Font.satoshi_medium))
         TextWeight.BOLD -> FontFamily(Font(CoreRes.Font.satoshi_bold))
         TextWeight.EXTRA_BOLD -> FontFamily(Font(CoreRes.Font.satoshi_bold))
+        TextWeight.THIN -> FontFamily(Font(CoreRes.Font.satoshi_regular))
     }
 }

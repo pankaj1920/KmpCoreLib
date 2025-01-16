@@ -1,19 +1,20 @@
 package com.psbapp.appres
 
-import gesundheitskiosk.core.resources.generated.resources.Res
-import gesundheitskiosk.core.resources.generated.resources.did_not_receive_otp
-import gesundheitskiosk.core.resources.generated.resources.email_empty_err
-import gesundheitskiosk.core.resources.generated.resources.ic_password_hide
-import gesundheitskiosk.core.resources.generated.resources.ic_password_show
-import gesundheitskiosk.core.resources.generated.resources.img_placeholder
-import gesundheitskiosk.core.resources.generated.resources.incorrect_email_err
-import gesundheitskiosk.core.resources.generated.resources.invalid_password_err
-import gesundheitskiosk.core.resources.generated.resources.password_and_confirm_password_not_matched_err
-import gesundheitskiosk.core.resources.generated.resources.password_empty_err
-import gesundheitskiosk.core.resources.generated.resources.satoshi_bold
-import gesundheitskiosk.core.resources.generated.resources.satoshi_edium
-import gesundheitskiosk.core.resources.generated.resources.satoshi_regular
-import gesundheitskiosk.core.resources.generated.resources.send_again
+import syncride.kmpcorelib.resources.generated.resources.Res
+import syncride.kmpcorelib.resources.generated.resources.did_not_receive_otp
+import syncride.kmpcorelib.resources.generated.resources.email_empty_err
+import syncride.kmpcorelib.resources.generated.resources.ic_check_white
+import syncride.kmpcorelib.resources.generated.resources.ic_password_hide
+import syncride.kmpcorelib.resources.generated.resources.ic_password_show
+import syncride.kmpcorelib.resources.generated.resources.img_placeholder
+import syncride.kmpcorelib.resources.generated.resources.incorrect_email_err
+import syncride.kmpcorelib.resources.generated.resources.invalid_password_err
+import syncride.kmpcorelib.resources.generated.resources.password_and_confirm_password_not_matched_err
+import syncride.kmpcorelib.resources.generated.resources.password_empty_err
+import syncride.kmpcorelib.resources.generated.resources.satoshi_bold
+import syncride.kmpcorelib.resources.generated.resources.satoshi_edium
+import syncride.kmpcorelib.resources.generated.resources.satoshi_regular
+import syncride.kmpcorelib.resources.generated.resources.send_again
 
 
 object CoreRes {
@@ -31,6 +32,7 @@ object CoreRes {
         val ic_password_hide = CoreDrawableRes.ic_password_hide
         val ic_password_show = CoreDrawableRes.ic_password_show
         val img_placeholder = CoreDrawableRes.img_placeholder
+        val ic_check_white = CoreDrawableRes.ic_check_white
     }
 
     object Font{

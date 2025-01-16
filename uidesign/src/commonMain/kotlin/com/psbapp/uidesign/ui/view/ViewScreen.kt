@@ -22,6 +22,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import com.psbapp.uidesign.theme.colors.BgColor
 import com.psbapp.uidesign.theme.colors.MaterialThemeColor
+import com.psbapp.uidesign.ui.imageview.PSBImageView
 import com.psbapp.uidesign.ui.imageview.PSBVectorImageView
 import com.psbapp.uidesign.ui.loader.LottieLoadingUi
 import com.psbapp.uidesign.ui.statusbar.SetNavigationBarColor
@@ -66,7 +67,7 @@ fun ViewScreen(
     } else {
         Box(modifier = Modifier.fillMaxSize()) {
             bgImage?.let {
-                PSBVectorImageView(
+                PSBImageView(
                     image = bgImage,
                     modifier = Modifier.fillMaxSize(),
                     contentScale = ContentScale.Crop

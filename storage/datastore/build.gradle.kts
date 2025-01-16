@@ -1,3 +1,4 @@
+import com.android.tools.r8.internal.di
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 plugins {
@@ -31,7 +32,7 @@ kotlin {
     sourceSets {
         commonMain.dependencies {
             api(libs.datastore.core)
-            api(projects.core.di)
+            api(projects.kmpCoreLib.di)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)

@@ -33,7 +33,7 @@ kotlin {
             api(compose.foundation)
             api(libs.kotlin.serialization)
             implementation(libs.kotlinx.datetime)
-            implementation(projects.core.di)
+            implementation(projects.kmpCoreLib.di)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)

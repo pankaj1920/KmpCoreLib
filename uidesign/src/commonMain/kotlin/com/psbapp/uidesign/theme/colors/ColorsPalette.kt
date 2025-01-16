@@ -26,6 +26,10 @@ data class ColorsPalette(
     val otpUnFocusColor: Color = OtpUnFocusColor,
     val otpTextColor: Color = OtpTextColor,
     val borderColor: Color = BorderColor,
+    val greenColor: Color = GreenColor,
+    val  textLightGray: Color = TextLightGray,
+    val  textResendColor: Color = TextResendColor,
+    val  locationTextColor: Color = yourLocationTextColor
 
 
     )
