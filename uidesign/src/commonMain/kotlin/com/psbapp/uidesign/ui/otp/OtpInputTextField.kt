@@ -29,6 +29,7 @@ import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.unit.Dp
 import com.psbapp.uidesign.theme.colors.MaterialThemeColor
 import com.psbapp.uidesign.theme.dimension.LocalDimensions
 import com.psbapp.uidesign.theme.dimension.MaterialDimension
@@ -46,6 +47,8 @@ fun OtpInputTextField(
     otpLength: Int,
     onOtpModified: (otp: String, otpFilled: Boolean) -> Unit,
     showInvalidOTP: Boolean,
+    containerSize: Dp = MaterialDimension.dp45,
+    containerSpace:Dp = MaterialDimension.dp26
 ) {
     val focusRequester = remember { FocusRequester() }
     var isFocused by remember { mutableStateOf(false) }
@@ -74,9 +77,10 @@ fun OtpInputTextField(
                         index = index,
                         text = otpText,
                         showInvalidOTP = showInvalidOTP,
-                        isFocused = isFocused && index == otpText.length
+                        isFocused = isFocused && index == otpText.length,
+                        containerSize = containerSize
                     )
-                    Spacer(modifier = Modifier.width(MaterialDimension.dp26))
+                    Spacer(modifier = Modifier.width(containerSpace))
                 }
             }
         }
@@ -89,6 +93,7 @@ internal fun CharacterContainer(
     text: String,
     showInvalidOTP: Boolean,
     isFocused: Boolean,
+    containerSize: Dp = MaterialDimension.dp45
 ) {
     val cursorVisible = remember { mutableStateOf(false) }
     val character = if (index < text.length) text[index].toString() else String.EMPTY
@@ -107,7 +112,7 @@ internal fun CharacterContainer(
 
     Box(
         modifier = Modifier
-            .size(MaterialDimension.dp45)
+            .size(containerSize)
             .border(
                 width = MaterialDimension.dp1,
                 color = if (showInvalidOTP) {
