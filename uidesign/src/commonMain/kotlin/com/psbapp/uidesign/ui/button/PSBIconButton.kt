@@ -33,6 +33,7 @@ import org.jetbrains.compose.resources.painterResource
 fun PSBIconButton(
     text: String,
     modifier: Modifier = Modifier,
+    height: Dp = MaterialDimension.dp40,
     textAlign: TextAlign = TextAlign.Center,
     fontWeight: TextWeight = TextWeight.SEMI_BOLD,
     style: TextStyle = whiteStyle.copy(fontSize = TextDimension.sp10),
@@ -49,7 +50,7 @@ fun PSBIconButton(
     Box(
         modifier = modifier.onClick {
             onClick()
-        }.height(MaterialDimension.dp45)
+        }.height(height)
             .background(bgColors, shape = roundCorner).padding(paddingValues),
         contentAlignment = Alignment.Center
     ) {
@@ -67,6 +68,14 @@ fun PSBIconButton(
                 )
             }
 
+            PSBText(
+                text = text,
+                modifier = Modifier.weight(1f),
+                textAlign = textAlign,
+                style = style,
+                fontWeight = fontWeight
+            )
+
             trailingIcon?.let {
                 Icon(
                     modifier = Modifier.size(trailingIconSize),
@@ -78,13 +87,7 @@ fun PSBIconButton(
 
         }
 
-        PSBText(
-            text = text,
-            modifier = Modifier.fillMaxWidth(),
-            textAlign = textAlign,
-            style = style,
-            fontWeight = fontWeight
-        )
+
     }
 
 }
