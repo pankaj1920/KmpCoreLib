@@ -15,11 +15,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.psbapp.uidesign.theme.colors.MaterialThemeColor
 import com.psbapp.uidesign.theme.typography.blackStyle
 import com.psbapp.uidesign.theme.typography.greyStyle
 import com.psbapp.uidesign.ui.edittext.validation.BaseValidationState
+import com.psbapp.uidesign.ui.textview.TextWeight
 import com.psbapp.utils.getCoroutineScope
 import kotlinx.coroutines.async
 
@@ -37,16 +39,18 @@ fun PSBTextField(
     keyboardActions: KeyboardActions = KeyboardActions.Default,
     textStyle: TextStyle = blackStyle,
     hintStyle: TextStyle = greyStyle,
+    fontWeight: TextWeight = TextWeight.REGULAR,
     text: String? = textState.text,
     enable: Boolean = true,
     singleLine: Boolean = true,
+    containerHeight: Dp = 45.dp,
     cursorBrush: SolidColor = SolidColor(MaterialThemeColor.primaryColor)
 ) {
     Row(
         verticalAlignment = Alignment.CenterVertically,
         modifier = boxModifier
             .fillMaxWidth()
-            .height(45.dp)
+            .height(containerHeight)
             .background(color = textFiledBgColor, shape = RoundedCornerShape(12.dp))
             .padding(horizontal = 10.dp)
     ) {
@@ -59,6 +63,7 @@ fun PSBTextField(
             hintStyle = hintStyle,
             text = text,
             enable = enable,
+            fontWeight=fontWeight,
             singleLine = singleLine,
             keyboardOptions = keyboardOptions,
             keyboardActions = keyboardActions,

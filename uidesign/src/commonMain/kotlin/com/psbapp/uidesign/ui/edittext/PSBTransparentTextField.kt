@@ -22,6 +22,7 @@ import com.psbapp.uidesign.theme.typography.blackStyle
 import com.psbapp.uidesign.theme.typography.greyStyle
 import com.psbapp.uidesign.ui.edittext.validation.BaseValidationState
 import com.psbapp.uidesign.ui.textview.PSBText
+import com.psbapp.uidesign.ui.textview.TextWeight
 
 @Composable
 fun PSBTransparentTextField(
@@ -33,9 +34,10 @@ fun PSBTransparentTextField(
     keyboardOptions: KeyboardOptions = KeyboardOptions.Default,
     keyboardActions: KeyboardActions = KeyboardActions.Default,
     textStyle: TextStyle = blackStyle,
-    hintStyle: TextStyle = greyStyle,
+    hintStyle: TextStyle = greyStyle.copy(fontSize = 13.sp),
     text: String? = textState.text,
     enable: Boolean = true,
+    fontWeight: TextWeight = TextWeight.REGULAR,
     singleLine: Boolean = true,
     cursorBrush: SolidColor = SolidColor(MaterialThemeColor.primaryColor)
 ) {
@@ -63,7 +65,7 @@ fun PSBTransparentTextField(
 
                 Box(modifier = Modifier.fillMaxWidth(), contentAlignment = Alignment.CenterStart) {
                     if (textState.text.isEmpty()) {
-                        PSBText(text = hint, style = hintStyle.copy(fontSize = 13.sp))
+                        PSBText(text = hint, style = hintStyle, fontWeight = fontWeight)
                     }
                     innerTextField()
                 }

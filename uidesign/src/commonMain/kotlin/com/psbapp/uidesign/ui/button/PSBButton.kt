@@ -14,12 +14,14 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.psbapp.uidesign.theme.colors.MaterialThemeColor
 import com.psbapp.uidesign.theme.dimension.MaterialDimension
 import com.psbapp.uidesign.theme.dimension.TextDimension
 import com.psbapp.uidesign.theme.typography.whiteStyle
 import com.psbapp.uidesign.ui.textview.PSBText
+import com.psbapp.uidesign.ui.textview.TextWeight
 import kotlinx.coroutines.delay
 
 @Composable
@@ -29,6 +31,7 @@ fun PSBButton(
     enable: Boolean = true,
     textStyle: TextStyle = whiteStyle.copy(fontSize = TextDimension.sp11),
     delayMillis: Long = 1000L,
+    fontWeight: TextWeight = TextWeight.REGULAR,
     onClick: () -> Unit,
     bgColor: Color = MaterialThemeColor.primaryDarkColor
 ) {
@@ -53,6 +56,6 @@ fun PSBButton(
             }
         }, elevation = ButtonDefaults.elevatedButtonElevation(2.dp)
     ) {
-        PSBText(text = text, style = textStyle)
+        PSBText(text = text, style = textStyle, fontWeight = fontWeight)
     }
 }

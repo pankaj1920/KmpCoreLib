@@ -51,12 +51,23 @@ fun PSBText(
         softWrap = softWrap,
         maxLines = maxLines,
         minLines = minLines,
-        fontWeight = FontWeight.ExtraBold,
+        fontWeight = getFontWeight(fontWeight),
         onTextLayout = onTextLayout,
         style = style.copy(fontFamily = fontFamily),
     )
 }
 
+@Composable
+fun getFontWeight(fontWeight: TextWeight): FontWeight{
+    return when(fontWeight){
+        TextWeight.REGULAR -> FontWeight.Normal
+        TextWeight.MEDIUM -> FontWeight.Medium
+        TextWeight.SEMI_BOLD -> FontWeight.SemiBold
+        TextWeight.BOLD -> FontWeight.Bold
+        TextWeight.EXTRA_BOLD -> FontWeight.ExtraBold
+        TextWeight.THIN -> FontWeight.Thin
+    }
+}
 
 @Composable
 fun getFontFamily(fontWeight: TextWeight): FontFamily {
